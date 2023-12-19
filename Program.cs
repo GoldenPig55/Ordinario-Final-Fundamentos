@@ -268,4 +268,51 @@ namespace OrdinarioFinalRaul
             Console.WriteLine("${Nombre} mueve su colita. Que chulo!");
         }
     }
+
+    public class Gato : Mascota
+    {
+        private int id;
+        private string nombre;
+        private int edad;
+        private string temperamento;
+        private string dueño;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Nombre;
+        public int Edad
+        {
+            get { return edad; }
+            set
+            {
+                if (edad <= 18 && edad > 0)
+                {
+                    edad = value;
+                }
+            }
+        }
+        public string Temperamento;
+        public string Dueño;
+
+        public void HacerRuido()
+        {
+            Console.WriteLine($"El gato {Nombre} hace ruido. Guau Guau!");
+        }
+        public void CambiarDueño()
+        {
+            // implementar cambiar dueño
+            Console.WriteLine($"El gato {Nombre} a cambiado de dueño a (nombre de la persona).");
+        }
+        public void Ronronear()
+        {
+            Console.WriteLine($"El gato {Nombre} se pone a ronronear.. prrr...");
+        }
+        public void Rasguñar()
+        {
+            Console.WriteLine($"El gato {Nombre} rasguña! Ouch!");
+        }
+    }
 }
