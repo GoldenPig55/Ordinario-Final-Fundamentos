@@ -301,6 +301,7 @@ namespace OrdinarioFinalRaul
     #region "Clases de las mascotas"
     public class Perro : IMascota, IAcariciable
     {
+        private int ultimoIdPerro;
         private int id;
         private int edad;
 
@@ -323,6 +324,12 @@ namespace OrdinarioFinalRaul
         }
         public Temperamento Temperamento { get; set; }
         public string Dueño { get; set; }
+        public Perro(string nombre)
+        {
+            Nombre = nombre;
+            Id = ultimoIdPerro + 1;
+            ultimoIdPerro++;
+        }
 
         public void HacerRuido()
         {
@@ -348,6 +355,7 @@ namespace OrdinarioFinalRaul
     }
     public class Gato : IMascota, IAcariciable
     {
+        private int ultimoIdGato;
         private int id;
         private int edad;
 
@@ -370,6 +378,12 @@ namespace OrdinarioFinalRaul
         }
         public Temperamento Temperamento { get; set; }
         public string Dueño { get; set; }
+        public Gato(string nombre)
+        {
+            Nombre = nombre;
+            Id = ultimoIdGato + 1;
+            ultimoIdGato++;
+        }
 
         public void HacerRuido()
         {
@@ -396,6 +410,7 @@ namespace OrdinarioFinalRaul
     }
     public class Capibara : IMascota, IAcariciable
     {
+        private int ultimoIdCapibara;
         private int id;
         private int edad;
 
@@ -418,6 +433,12 @@ namespace OrdinarioFinalRaul
         }
         public Temperamento Temperamento { get; set; }
         public string Dueño { get; set; }
+        public Capibara(string nombre)
+        {
+            Nombre = nombre;
+            Id = ultimoIdCapibara + 1;
+            ultimoIdCapibara++;
+        }
 
         public void HacerRuido()
         {
