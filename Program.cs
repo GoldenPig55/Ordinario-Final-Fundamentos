@@ -32,7 +32,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 4:Console.Clear();
-
+                    ProgramaPrincipal();
                     break;
 
                 case 5:Console.Clear();// Implementado Correctamente
@@ -40,9 +40,8 @@ namespace OrdinarioFinalRaul
                     break;
 
                 default:Console.Clear();// Implementado Correctamente
-                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    Console.WriteLine("La opcion que introdujo no es valida, favor de colocar otro numero");
                     ProgramaPrincipal();
-
                     break;
             }
         }
@@ -86,15 +85,19 @@ namespace OrdinarioFinalRaul
             switch (SeleccionarOpcionDeMenu) 
             {
                 case 1: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 2: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 3: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 4: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 5: Console.Clear();// Implementado Correctamente
@@ -121,22 +124,27 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 2:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 3:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 4:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 5:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 6:
@@ -163,12 +171,12 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
-
+                    AdministracionDeAdopciones();
                     break;
 
                 case 2:
                     Console.Clear();
-
+                    AdministracionDeAdopciones();
                     break;
 
                 case 3:
@@ -194,12 +202,12 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
-
+                    AdministracionDeBienestarAnimal();
                     break;
 
                 case 2:
                     Console.Clear();
-
+                    AdministracionDeBienestarAnimal();
                     break;
 
                 case 3:
