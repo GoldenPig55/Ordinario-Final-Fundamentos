@@ -46,6 +46,7 @@ namespace OrdinarioFinalRaul
             }
         }
 
+        #region "Opciones dentro de Programa Principal"
         private static void AdministracionDelCentro() 
         {
             Console.WriteLine("Entro a Administracion Del Centro.  Elija una Opcion");
@@ -150,10 +151,58 @@ namespace OrdinarioFinalRaul
             }
         }
         #endregion
+
+        #endregion
     }
     interface Mascota
     { 
         void HacerRuido();
         void CambiarDueño();
+    }
+
+    public class Perro : Mascota
+    {
+        private int id;
+        private string nombre;
+        private int edad;
+        private string temperamento;
+        private string dueño;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Nombre;
+        public int Edad
+        {
+            get { return edad; }
+            set
+            {
+                if (edad <= 14 && edad > 0)
+                {
+                    edad = value;
+                }
+            }
+        }
+        public string Temperamento;
+        public string Dueño;
+
+        public void HacerRuido()
+        {
+            Console.WriteLine("${Nombre} hace ruido. Guau Guau!");
+        }
+        public void CambiarDueño()
+        {
+            // implementar cambiar dueño
+        }
+        public void Gruñir()
+        {
+            Console.WriteLine("${Nombre} se pone a gruñir. Grrr!");
+        }
+        public void MoverCola()
+        {
+            Console.WriteLine("${Nombre} mueve su colita. Que chulo!");
+        }
     }
 }
