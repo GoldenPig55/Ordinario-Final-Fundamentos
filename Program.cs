@@ -116,7 +116,7 @@ namespace OrdinarioFinalRaul
         private static void AdministracionDeMascotas() 
         {
             Console.WriteLine("Entro a Administración de Mascotas.  Favor de eleir una opcion");
-            Console.WriteLine("[1] - Mostrar Todas Las mascotas registradas  [2] - Registrar Macota Nueva  [3] - Buscar mascotas por especie");
+            Console.WriteLine("[1] - Mostrar Todas Las mascotas registradas  [2] - Registrar Mascota Nueva  [3] - Buscar mascotas por especie");
             Console.WriteLine("[4] - Buscar mascotas por nombre  [5] - Examinar Mascota  [6] - Volver al menu anterior");
 
             int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
