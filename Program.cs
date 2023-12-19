@@ -3,6 +3,7 @@
     class Program
     {
         public static AdminsitracionDeMascotas administracionDeMascotas = new AdminsitracionDeMascotas();
+        public static AdminsitracionDePersonas administracionDePersonas = new AdminsitracionDePersonas();
         static void Main(string[] args)
         {
             ProgramaPrincipal();
@@ -94,11 +95,13 @@
             {
                 case 1:
                     Console.Clear();
+                    administracionDePersonas.MostrarPersonasRegistradas();
                     AdministracionDePersonas();
                     break;
 
                 case 2:
                     Console.Clear();
+                    administracionDePersonas.RegistrarPersonaNueva();
                     AdministracionDePersonas();
                     break;
 
