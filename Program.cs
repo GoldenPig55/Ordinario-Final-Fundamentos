@@ -229,19 +229,23 @@ namespace OrdinarioFinalRaul
         }
     }
 
-    interface Mascota
-    { 
+    interface IMascota
+    {
         void HacerRuido();
         void CambiarDueño();
     }
+    interface IAcariciable
+    {
+        void ResponderACaricia();
+    }
 
     #region "Clases de las mascotas"
-    public class Perro : Mascota
+    public class Perro : IMascota, IAcariciable
     {
         private int id;
         private string nombre;
         private int edad;
-        private string temperamento;
+        private Temperamento temperamento;
         private string dueño;
 
         public int Id
@@ -261,32 +265,37 @@ namespace OrdinarioFinalRaul
                 }
             }
         }
-        public string Temperamento;
+        public Temperamento Temperamento;
         public string Dueño;
 
         public void HacerRuido()
         {
-            Console.WriteLine("${Nombre} hace ruido. Guau Guau!");
+            Console.WriteLine($"El perro {Nombre} hace ruido. Guau Guau!");
         }
         public void CambiarDueño()
         {
             // implementar cambiar dueño
+            Console.WriteLine($"El perro {Nombre} a cambiado de dueño a (nombre de la persona).");
         }
         public void Gruñir()
         {
-            Console.WriteLine("${Nombre} se pone a gruñir. Grrr!");
+            Console.WriteLine($"El perro {Nombre} se pone a gruñir. Grrr!");
         }
         public void MoverCola()
         {
-            Console.WriteLine("${Nombre} mueve su colita. Que chulo!");
+            Console.WriteLine($"El perro {Nombre} mueve su colita. Que chulo!");
+        }
+        public void ResponderACaricia()
+        {
+            Console.WriteLine($"El perro {Nombre} responde moviendo su colita. Que bonito!");
         }
     }
-    public class Gato : Mascota
+    public class Gato : IMascota, IAcariciable
     {
         private int id;
         private string nombre;
         private int edad;
-        private string temperamento;
+        private Temperamento temperamento;
         private string dueño;
 
         public int Id
@@ -306,7 +315,7 @@ namespace OrdinarioFinalRaul
                 }
             }
         }
-        public string Temperamento;
+        public Temperamento Temperamento;
         public string Dueño;
 
         public void HacerRuido()
@@ -326,6 +335,11 @@ namespace OrdinarioFinalRaul
         {
             Console.WriteLine($"El gato {Nombre} rasguña! Ouch!");
         }
+        public void ResponderACaricia()
+        {
+            Console.WriteLine($"El perro {Nombre} responde moviendo su colita. Que bonito!");
+        }
+
     }
     public class Capibara : Mascota
     {
