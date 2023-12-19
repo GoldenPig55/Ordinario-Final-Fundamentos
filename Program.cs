@@ -29,7 +29,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 3:Console.Clear();
-
+                    AdministracionDeBienestarAnimal();
                     break;
 
                 case 4:Console.Clear();
@@ -152,7 +152,7 @@ namespace OrdinarioFinalRaul
         }
         #endregion
 
-        private static void AdministracionDeAdopciones() 
+        private static void AdministracionDeAdopciones()
         {
             Console.WriteLine("Entro a Administracion De Adopciones.  Elija una Opcion");
             Console.WriteLine("[1] - Ver mascotas disponibles para Adopcion [2] - Adoptar mascota  [3] - Regresar a Menu Anterior");
@@ -162,12 +162,12 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
-                    
+
                     break;
 
                 case 2:
                     Console.Clear();
-                    
+
                     break;
 
                 case 3:
@@ -178,10 +178,45 @@ namespace OrdinarioFinalRaul
                 default:
                     Console.Clear();
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    AdministracionDeAdopciones();
                     break;
             }
+            
+        }
+        private static void AdministracionDeBienestarAnimal() 
+        {
+            Console.WriteLine("Entro a Administracion De Bienestar Animal.  Elija una Opcion");
+            Console.WriteLine("[1] - Servicio de Spa [2] - Corte de pelo  [3] - Regresar a Menu Anterior");
+
+            int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
+            switch (SeleccionarOpcionDeMenu)
+            {
+                case 1:
+                    Console.Clear();
+
+                    break;
+
+                case 2:
+                    Console.Clear();
+
+                    break;
+
+                case 3:
+                    Console.Clear();
+                    ProgramaPrincipal();
+                    break;
+
+                default:
+                    Console.Clear();
+                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    AdministracionDeBienestarAnimal();
+                    break;
+            }
+        }
         #endregion
     }
+
+
     interface Mascota
     { 
         void HacerRuido();
