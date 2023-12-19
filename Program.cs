@@ -1,10 +1,13 @@
+
 ﻿using System.Data;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OrdinarioFinalRaul
 {
     class Program
     {
         public static AdminsitracionDeMascotas administracionDeMascotas = new AdminsitracionDeMascotas();
+        public static AdminsitracionDePersonas administracionDePersonas = new AdminsitracionDePersonas();
         static void Main(string[] args)
         {
             ProgramaPrincipal();
@@ -96,12 +99,12 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
-                    AdministracionDePersonas();
+                    administracionDePersonas.MostrarPersonasRegistradas();
                     break;
 
                 case 2:
                     Console.Clear();
-                    AdministracionDePersonas();
+                    administracionDePersonas.RegistrarPersonaNueva();
                     break;
 
                 case 3:
@@ -488,9 +491,9 @@ namespace OrdinarioFinalRaul
             {
                 Console.WriteLine("Peronas Registradas");
 
-                for (int i = 0; i < RegistroDePersonas.Count; i++)
+                foreach (var persona in RegistroDePersonas)
                 {
-                    Console.WriteLine($"Id : {RegistroDePersonas[i].Id} Nombre : {RegistroDePersonas[i].Nombre}");
+                    Console.WriteLine($"Id : {persona.Id}  Nombre : {persona.Nombre}");
                 }
             }
             else
@@ -508,7 +511,7 @@ namespace OrdinarioFinalRaul
             Nombre = Console.ReadLine();
 
             Console.WriteLine($"Bienvenido {Nombre}, ah sido agregado al registo");
-            Persona persona = new Persona();
+            Persona persona = new Persona(Nombre);
 
             RegistroDePersonas.Add(persona);
         }
@@ -555,6 +558,10 @@ public class Perro : IMascota, IAcariciable
             if (edad <= 14 && edad > 0)
             {
                 edad = value;
+            }
+            else
+            {
+                throw new Exception("La edad debe ser entre 1 y 14 años.");
             }
         }
     }
@@ -613,6 +620,10 @@ public class Gato : IMascota, IAcariciable
             {
                 edad = value;
             }
+            else
+            {
+                throw new Exception("La edad debe ser entre 1 y 18 años.");
+            }
         }
     }
     public Temperamento Temperamento;
@@ -659,7 +670,7 @@ public class Capibara : IMascota, IAcariciable
     public int Id
     {
         get { return id; }
-        set { id = value; }
+        private set { id = value; }
     }
     public string Nombre;
     public int Edad
@@ -670,6 +681,10 @@ public class Capibara : IMascota, IAcariciable
             if (edad <= 11 && edad > 0)
             {
                 edad = value;
+            }
+            else
+            {
+                throw new Exception("La edad debe ser entre 1 y 11 años.");
             }
         }
     }
@@ -697,13 +712,14 @@ public class Capibara : IMascota, IAcariciable
 }
 public class Persona
 {
+    private int ultimoIdPersona = 0;
     private int id;
     private string nombre;
 
     public int Id
     {
         get { return id; }
-        set { id = value; }
+        private set { id = value; }
     }
     public string Nombre
     {
@@ -712,9 +728,19 @@ public class Persona
         {
             if (string.IsNullOrWhiteSpace(value) == false)
             {
-                nombre = value;
+                nombre = value.Trim();
+            }
+            else
+            {
+                throw new Exception("El nombre no puede estar vacio");
             }
         }
+    }
+    public Persona(string nombre)
+    {
+        Nombre = nombre;
+        Id = ultimoIdPersona + 1;
+        ultimoIdPersona++;
     }
 
     public void ObtenerMascotas()
