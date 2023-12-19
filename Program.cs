@@ -4,7 +4,7 @@ namespace OrdinarioFinalRaul
 {
     class Program
     {
-        AdminsitracionDeMascotas administracionDeMascotas = new AdminsitracionDeMascotas();
+        public static AdminsitracionDeMascotas administracionDeMascotas = new AdminsitracionDeMascotas();
         static void Main(string[] args)
         {
             ProgramaPrincipal();
@@ -124,12 +124,17 @@ namespace OrdinarioFinalRaul
             switch (SeleccionarOpcionDeMenu)
             {
                 case 1:
+                    Console.Clear(); // Implementado Correcto 
+                    administracionDeMascotas.MostrarMascotasRegistradas();
+                    Console.ReadKey();
+
                     Console.Clear();
                     AdministracionDeMascotas();
                     break;
 
                 case 2:
-                    Console.Clear();
+                    Console.Clear(); // Implementado Correcto 
+                    administracionDeMascotas.RegistrarMascotaNueva();
                     AdministracionDeMascotas();
                     break;
 
@@ -292,7 +297,7 @@ namespace OrdinarioFinalRaul
                     Nombre = Console.ReadLine();
 
                     Console.WriteLine($"Que bonito es tu Perro, {Nombre} ah sido agregado al registo");
-                    Perro perro = new Perro();
+                    Perro perro = new Perro(Nombre);
 
                     RegistroDePerros.Add(perro);
 
@@ -304,7 +309,7 @@ namespace OrdinarioFinalRaul
                     Nombre = Console.ReadLine();
 
                     Console.WriteLine($"Que bonito es tu Gato, {Nombre} ah sido agregado al registo");
-                    Gato gato = new Gato();
+                    Gato gato = new Gato(Nombre);
 
                     RegistroDeGatos.Add(gato);
                     break;
@@ -315,7 +320,7 @@ namespace OrdinarioFinalRaul
                     Nombre = Console.ReadLine();
 
                     Console.WriteLine($"Que bonito es tu Capibara, {Nombre} ah sido agregado al registo");
-                    Capibara capibara = new Capibara();
+                    Capibara capibara = new Capibara(Nombre);
 
                     RegistroDeCapibaras.Add(capibara);
                     break;
