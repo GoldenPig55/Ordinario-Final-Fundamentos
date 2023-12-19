@@ -282,25 +282,42 @@ namespace OrdinarioFinalRaul
             Console.WriteLine("Exelente, Vemos que quiere registrar una mascota, Cual es la especie de la mascota?");
             Console.WriteLine("Perro [p]  Gato [g]  Capibara [c]");
             string especieDeLaMascota = Console.ReadLine();
+            string Nombre;
 
             switch (especieDeLaMascota) 
             {
                 case "p": 
                     Console.Clear();
                     Console.WriteLine("Wow, Es un perro muy bonito, Cual es su nombre?");
-                    string Nombre = Console.ReadLine();
+                    Nombre = Console.ReadLine();
 
                     Console.WriteLine($"Que bonito es tu Perro, {Nombre} ah sido agregado al registo");
                     Perro perro = new Perro();
+
+                    RegistroDePerros.Add(perro);
 
                     break;
 
                 case "g":
                     Console.Clear();
+                    Console.WriteLine("Wow, Es un gato muy bonito, Cual es su nombre?");
+                    Nombre = Console.ReadLine();
+
+                    Console.WriteLine($"Que bonito es tu Gato, {Nombre} ah sido agregado al registo");
+                    Gato gato = new Gato();
+
+                    RegistroDeGatos.Add(gato);
                     break;
 
                 case "c":
                     Console.Clear();
+                    Console.WriteLine("Wow, Es un capibara muy bonito, Cual es su nombre?");
+                    Nombre = Console.ReadLine();
+
+                    Console.WriteLine($"Que bonito es tu Capibara, {Nombre} ah sido agregado al registo");
+                    Capibara capibara = new Capibara();
+
+                    RegistroDeCapibaras.Add(capibara);
                     break;
 
                 default:
