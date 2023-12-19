@@ -294,17 +294,14 @@ namespace OrdinarioFinalRaul
     public class Perro : IMascota, IAcariciable
     {
         private int id;
-        private string nombre;
         private int edad;
-        private Temperamento temperamento;
-        private string dueño;
 
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        public string Nombre;
+        public string Nombre { get; set; }
         public int Edad
         {
             get { return edad; }
@@ -316,8 +313,8 @@ namespace OrdinarioFinalRaul
                 }
             }
         }
-        public Temperamento Temperamento;
-        public string Dueño;
+        public Temperamento Temperamento { get; set; }
+        public string Dueño { get; set; }
 
         public void HacerRuido()
         {
@@ -344,17 +341,14 @@ namespace OrdinarioFinalRaul
     public class Gato : IMascota, IAcariciable
     {
         private int id;
-        private string nombre;
         private int edad;
-        private Temperamento temperamento;
-        private string dueño;
 
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        public string Nombre;
+        public string Nombre { get; set; }
         public int Edad
         {
             get { return edad; }
@@ -366,8 +360,8 @@ namespace OrdinarioFinalRaul
                 }
             }
         }
-        public Temperamento Temperamento;
-        public string Dueño;
+        public Temperamento Temperamento { get; set; }
+        public string Dueño { get; set; }
 
         public void HacerRuido()
         {
@@ -395,17 +389,14 @@ namespace OrdinarioFinalRaul
     public class Capibara : IMascota, IAcariciable
     {
         private int id;
-        private string nombre;
         private int edad;
-        private Temperamento temperamento;
-        private string dueño;
 
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        public string Nombre;
+        public string Nombre { get; set; }
         public int Edad
         {
             get { return edad; }
@@ -417,8 +408,8 @@ namespace OrdinarioFinalRaul
                 }
             }
         }
-        public Temperamento Temperamento;
-        public string Dueño;
+        public Temperamento Temperamento { get; set; }
+        public string Dueño { get; set; }
 
         public void HacerRuido()
         {
