@@ -4,6 +4,7 @@ namespace OrdinarioFinalRaul
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             ProgramaPrincipal();
@@ -24,7 +25,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 2:Console.Clear();
-
+                    
                     break;
 
                 case 3:Console.Clear();
@@ -54,17 +55,25 @@ namespace OrdinarioFinalRaul
             switch (SeleccionarOpcionDeMenu) 
             {
                 case 1:Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 2: Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 3: Console.Clear();
                     ProgramaPrincipal();
                     break;
+
+                default:
+                    Console.Clear();
+                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    break;
             }
         }
 
+        #region "Opciones dentro de Administracion de Centro"
         private static void AdministracionDePersonas() 
         {
             Console.WriteLine("Entro a Administración de Personas.  Favor de eleir una opcion");
@@ -87,19 +96,63 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 5: Console.Clear();
-                    ProgramaPrincipal();
+                    AdministracionDelCentro();
+                    break;
+
+                default:
+                    Console.Clear();
+                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    AdministracionDePersonas();
                     break;
             }
 
         }
+
+        private static void AdministracionDeMascotas() 
+        {
+            Console.WriteLine("Entro a Administración de Mascotas.  Favor de eleir una opcion");
+            Console.WriteLine("[1] - Mostrar Todas Las mascotas registradas  [2] - Registrar Macota Nueva  [3] - Buscar mascotas por especie");
+            Console.WriteLine("[4] - Buscar mascotas por nombre  [5] - Examinar Mascota  [6] - Volver al menu anterior");
+
+            int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
+            switch (SeleccionarOpcionDeMenu)
+            {
+                case 1:
+                    Console.Clear();
+                    break;
+
+                case 2:
+                    Console.Clear();
+                    break;
+
+                case 3:
+                    Console.Clear();
+                    break;
+
+                case 4:
+                    Console.Clear();
+                    break;
+
+                case 5:
+                    Console.Clear();
+                    break;
+
+                case 6:
+                    Console.Clear();
+                    AdministracionDelCentro();
+                    break;
+
+                default:
+                    Console.Clear();
+                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    AdministracionDeMascotas();
+                    break;
+            }
+        }
+        #endregion
     }
     interface Mascota
-    {
-        /*private int id;
-        private string nombre;
-        private int edad;
-        private var temperamento;
-        private string dueño;*/
+    { 
         void HacerRuido();
         void CambiarDueño();
     }
