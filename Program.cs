@@ -9,4 +9,14 @@ namespace OrdinarioFinalRaul
 
         }
     }
+    interface Mascota
+    {
+        private int id;
+        private string nombre;
+        private int edad;
+        private var temperamento;
+        private string dueño;
+        void HacerRuido();
+        void CambiarDueño();
+    }
 }
