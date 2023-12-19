@@ -217,15 +217,60 @@ namespace OrdinarioFinalRaul
         #endregion
     }
 
-    class AdminsitracionDeMascotas 
+    class AdminsitracionDeMascotas
     {
-        public List<Mascota> MascotasRegistradas = new List<Mascota>();
-        public void MostrarMascotasRegistradas() 
+        public List<Perro> RegistroDePerros = new List<Perro>();
+        public List<Gato> RegistroDeGatos = new List<Gato>();
+        public List<Capibara> RegistroDeCapibaras = new List<Capibara>();
+        public void MostrarMascotasRegistradas()
         {
-            for (int i = 0; i < MascotasRegistradas.Count; i++) 
+            if (RegistroDePerros.Count > 0)
             {
-            
+                Console.WriteLine("Perros Registrados");
+
+                for (int i = 0; i < RegistroDePerros.Count; i++)
+                {
+                    Console.WriteLine($"Id : {RegistroDePerros[i].Id} Nombre : {RegistroDePerros[i].Nombre}");
+                }
             }
+            else
+            {
+                Console.WriteLine("No hay Perros registados");
+            }
+
+            if (RegistroDeGatos.Count > 0)
+            {
+                Console.WriteLine("Gatos Registrados");
+
+                for (int i = 0; i < RegistroDeGatos.Count; i++)
+                {
+                    Console.WriteLine($"Id : {RegistroDeGatos[i].Id} Nombre : {RegistroDeGatos[i].Nombre}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hay Gatos registados");
+            }
+
+            if (RegistroDeCapibaras.Count > 0)
+            {
+                Console.WriteLine("Capibaras Registrados");
+
+                for (int i = 0; i < RegistroDeCapibaras.Count; i++)
+                {
+                    Console.WriteLine($"Id : {RegistroDeCapibaras[i].Id} Nombre : {RegistroDeCapibaras[i].Nombre}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hay Capibaras registados");
+            }
+
+        }
+
+        public void RegistrarMascotaNueva()
+        {
+
         }
     }
 
