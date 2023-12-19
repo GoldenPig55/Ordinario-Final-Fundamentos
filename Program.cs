@@ -1,3 +1,5 @@
+
+﻿using System.Data;
 ﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OrdinarioFinalRaul
@@ -98,13 +100,11 @@ namespace OrdinarioFinalRaul
                 case 1:
                     Console.Clear();
                     administracionDePersonas.MostrarPersonasRegistradas();
-                    AdministracionDePersonas();
                     break;
 
                 case 2:
                     Console.Clear();
                     administracionDePersonas.RegistrarPersonaNueva();
-                    AdministracionDePersonas();
                     break;
 
                 case 3:
@@ -141,7 +141,7 @@ namespace OrdinarioFinalRaul
             switch (SeleccionarOpcionDeMenu)
             {
                 case 1:
-                    Console.Clear(); // Implementado Correcto 
+                    Console.Clear(); // Implementado Correctamente
                     administracionDeMascotas.MostrarMascotasRegistradas();
                     Console.ReadKey();
 
@@ -150,17 +150,25 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 2:
-                    Console.Clear(); // Implementado Correcto 
+                    Console.Clear(); // Implementado Correctamente
                     administracionDeMascotas.RegistrarMascotaNueva();
                     AdministracionDeMascotas();
                     break;
 
                 case 3:
+                    Console.Clear(); // Implementado Correctamente
+                    administracionDeMascotas.BuscarMascotaPorEspecie();
+                    Console.ReadKey();
+
                     Console.Clear();
                     AdministracionDeMascotas();
                     break;
 
                 case 4:
+                    Console.Clear();
+                    administracionDeMascotas.BuscarMascotaPorNombre();
+                    Console.ReadKey();
+
                     Console.Clear();
                     AdministracionDeMascotas();
                     break;
@@ -348,6 +356,130 @@ namespace OrdinarioFinalRaul
                     break;
 
             }
+        }
+
+        public void BuscarMascotaPorEspecie() 
+        {
+            Console.WriteLine("Que especie es la mascota que etsa buscando ?");
+            Console.WriteLine("Perro [p]  Gato [g]  Capibara [c]");
+            string Especie = Console.ReadLine();
+
+            switch (Especie) 
+            {
+                case "p":
+                    if (RegistroDePerros.Count > 0)
+                    {
+                        Console.WriteLine("Perros Registrados");
+
+                        for (int i = 0; i < RegistroDePerros.Count; i++)
+                        {
+                            Console.WriteLine($"Id : {RegistroDePerros[i].Id} Nombre : {RegistroDePerros[i].Nombre}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay Perros registados");
+                    }
+                    break;
+
+                case "g":
+                    if (RegistroDeGatos.Count > 0)
+                    {
+                        Console.WriteLine("Gatos Registrados");
+
+                        for (int i = 0; i < RegistroDeGatos.Count; i++)
+                        {
+                            Console.WriteLine($"Id : {RegistroDeGatos[i].Id} Nombre : {RegistroDeGatos[i].Nombre}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay Gatos registados");
+                    }
+                    break;
+
+                case "c":
+                    Console.WriteLine("Capibaras Registrados");
+
+                    if (RegistroDeCapibaras.Count > 0)
+                    {
+                        Console.WriteLine("Capibaras Registrados");
+
+                        for (int i = 0; i < RegistroDeCapibaras.Count; i++)
+                        {
+                            Console.WriteLine($"Id : {RegistroDeCapibaras[i].Id} Nombre : {RegistroDeCapibaras[i].Nombre}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay Capibaras registados");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("La opcion que usted puso NO EXISTE, favor de escojer otra");
+                    BuscarMascotaPorEspecie();
+                    break;
+            }
+        }
+
+        public void BuscarMascotaPorNombre() 
+        {
+            Console.WriteLine("Cual es el nombre de la mascota que esta buscando");
+            int p = -1, g = -1, c = -1;
+            string Nombre = Console.ReadLine();
+            bool MascotaEncontrada = false;
+
+            for (int i = 0; i < RegistroDePerros.Count; i++)
+            {
+                MascotaEncontrada = (RegistroDePerros[i].Nombre) == Nombre;
+
+                if (MascotaEncontrada) 
+                {
+                    p = i;
+                }
+            }
+
+            for (int i = 0; i < RegistroDeGatos.Count; i++)
+            {
+                MascotaEncontrada = (RegistroDeGatos[i].Nombre) == Nombre;
+                if (MascotaEncontrada)
+                {
+                    g = i;
+                }
+            }
+
+            for (int i = 0; i < RegistroDeCapibaras.Count; i++)
+            {
+                MascotaEncontrada = (RegistroDeCapibaras[i].Nombre) == Nombre;
+                if (MascotaEncontrada)
+                {
+                    c = i;
+                }
+            }
+
+            if (MascotaEncontrada)
+            {
+                Console.WriteLine("Su mascota fue encontrada en el registro");
+
+                if (p >= 0) 
+                {
+                    Console.WriteLine($"Su mascota es : {RegistroDePerros[p].Id}  -  {RegistroDePerros[p].Nombre}");
+                }
+                else if (g >= 0)
+                {
+                    Console.WriteLine($"Su mascota es : {RegistroDeGatos[g].Id}  -  {RegistroDeGatos[g].Nombre}");
+                }
+                else if (c >= 0)
+                {
+                    Console.WriteLine($"Su mascota es : {RegistroDeCapibaras[c].Id}  -  {RegistroDeCapibaras[c].Nombre}");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("Su mascota No fue encontrada en el registro");
+            }
+
         }
     }
     class AdminsitracionDePersonas
