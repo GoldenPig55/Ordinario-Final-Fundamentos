@@ -163,6 +163,10 @@ namespace OrdinarioFinalRaul
 
                 case 4:
                     Console.Clear();
+                    administracionDeMascotas.BuscarMascotaPorNombre();
+                    Console.ReadKey();
+
+                    Console.Clear();
                     AdministracionDeMascotas();
                     break;
 
@@ -414,6 +418,65 @@ namespace OrdinarioFinalRaul
                     BuscarMascotaPorEspecie();
                     break;
             }
+        }
+
+        public void BuscarMascotaPorNombre() 
+        {
+            Console.WriteLine("Cual es el nombre de la mascota que esta buscando");
+            int p = -1, g = -1, c = -1;
+            string Nombre = Console.ReadLine();
+            bool MascotaEncontrada = false;
+
+            for (int i = 0; i < RegistroDePerros.Count; i++)
+            {
+                MascotaEncontrada = (RegistroDePerros[i].Nombre) == Nombre;
+
+                if (MascotaEncontrada) 
+                {
+                    p = i;
+                }
+            }
+
+            for (int i = 0; i < RegistroDeGatos.Count; i++)
+            {
+                MascotaEncontrada = (RegistroDeGatos[i].Nombre) == Nombre;
+                if (MascotaEncontrada)
+                {
+                    g = i;
+                }
+            }
+
+            for (int i = 0; i < RegistroDeCapibaras.Count; i++)
+            {
+                MascotaEncontrada = (RegistroDeCapibaras[i].Nombre) == Nombre;
+                if (MascotaEncontrada)
+                {
+                    c = i;
+                }
+            }
+
+            if (MascotaEncontrada)
+            {
+                Console.WriteLine("Su mascota fue encontrada en el registro");
+
+                if (p >= 0) 
+                {
+                    Console.WriteLine($"Su mascota es : {RegistroDePerros[p].Id}  -  {RegistroDePerros[p].Nombre}");
+                }
+                else if (g >= 0)
+                {
+                    Console.WriteLine($"Su mascota es : {RegistroDeGatos[g].Id}  -  {RegistroDeGatos[g].Nombre}");
+                }
+                else if (c >= 0)
+                {
+                    Console.WriteLine($"Su mascota es : {RegistroDeCapibaras[c].Id}  -  {RegistroDeCapibaras[c].Nombre}");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("Su mascota No fue encontrada en el registro");
+            }
+
         }
     }
     class AdminsitracionDePersonas
