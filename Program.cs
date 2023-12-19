@@ -341,12 +341,12 @@ namespace OrdinarioFinalRaul
         }
 
     }
-    public class Capibara : Mascota
+    public class Capibara : IMascota, IAcariciable
     {
         private int id;
         private string nombre;
         private int edad;
-        private string temperamento;
+        private Temperamento temperamento;
         private string dueño;
 
         public int Id
@@ -366,7 +366,7 @@ namespace OrdinarioFinalRaul
                 }
             }
         }
-        public string Temperamento;
+        public Temperamento Temperamento;
         public string Dueño;
 
         public void HacerRuido()
@@ -377,6 +377,53 @@ namespace OrdinarioFinalRaul
         {
             // implementar cambiar dueño
             Console.WriteLine($"La capibara {Nombre} a cambiado de dueño a (nombre de la persona).");
+        }
+        public void ResponderACaricia()
+        {
+            Console.WriteLine($"La capibara no puede ser acariciada, solo admirada.");
+        }
+    }
+    public class Persona
+    {
+        private int id;
+        private string nombre;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value) == false)
+                {
+                    nombre = value;
+                }
+            }
+        }
+
+        public void ObtenerMascotas()
+        {
+            // devolver lista de mascotas que la persona posee
+        }
+        public void ObtenerMascotasPorId()
+        {
+            // obtener mascota por busqueda de ID
+        }
+        public void AgregarMascotas()
+        {
+            // Agregar mascota toma un objeto que se comporte como una mascota, y muestra un texto que diga algo tipo Raúl agrega a Milaneso a sus mascotas , seguido por el comportamiento de hacer ruido de la mascota adoptada
+        }
+        public void Acariciar()
+        {
+            // acariciar mascota seleccionada
+        }
+        public void AcariciarMascotas()
+        {
+            // acariciar todas las mascotas
         }
     }
     #endregion
