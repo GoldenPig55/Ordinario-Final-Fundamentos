@@ -8,7 +8,6 @@ namespace OrdinarioFinalRaul
         static void Main(string[] args)
         {
             ProgramaPrincipal();
-            Console.ReadKey();
         }
 
         private static void ProgramaPrincipal() 
@@ -20,15 +19,15 @@ namespace OrdinarioFinalRaul
             int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
             switch (SeleccionarOpcionDeMenu) 
             {
-                case 1:Console.Clear();
+                case 1:Console.Clear(); // Implementado Correctamente
                     AdministracionDelCentro();
                     break;
 
-                case 2:Console.Clear();
+                case 2:Console.Clear();// Implementado Correctamente
                     AdministracionDeAdopciones();
                     break;
 
-                case 3:Console.Clear();
+                case 3:Console.Clear();// Implementado Correctamente
                     AdministracionDeBienestarAnimal();
                     break;
 
@@ -36,12 +35,14 @@ namespace OrdinarioFinalRaul
 
                     break;
 
-                case 5:Console.Clear();
-
+                case 5:Console.Clear();// Implementado Correctamente
+                    Console.ReadKey();
                     break;
 
-                default:Console.Clear();
+                default:Console.Clear();// Implementado Correctamente
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    ProgramaPrincipal();
+
                     break;
             }
         }
@@ -55,20 +56,20 @@ namespace OrdinarioFinalRaul
             int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
             switch (SeleccionarOpcionDeMenu) 
             {
-                case 1:Console.Clear();
+                case 1:Console.Clear();// Implementado Correctamente
                     AdministracionDePersonas();
                     break;
 
-                case 2: Console.Clear();
+                case 2: Console.Clear();// Implementado Correctamente
                     AdministracionDeMascotas();
                     break;
 
-                case 3: Console.Clear();
+                case 3: Console.Clear();// Implementado Correctamente
                     ProgramaPrincipal();
                     break;
 
                 default:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
                     break;
             }
@@ -96,12 +97,12 @@ namespace OrdinarioFinalRaul
                 case 4: Console.Clear();
                     break;
 
-                case 5: Console.Clear();
+                case 5: Console.Clear();// Implementado Correctamente
                     AdministracionDelCentro();
                     break;
 
                 default:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
                     AdministracionDePersonas();
                     break;
@@ -139,12 +140,12 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 6:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     AdministracionDelCentro();
                     break;
 
                 default:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
                     AdministracionDeMascotas();
                     break;
@@ -171,12 +172,12 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 3:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     ProgramaPrincipal();
                     break;
 
                 default:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
                     AdministracionDeAdopciones();
                     break;
@@ -202,12 +203,12 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 3:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     ProgramaPrincipal();
                     break;
 
                 default:
-                    Console.Clear();
+                    Console.Clear();// Implementado Correctamente
                     Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
                     AdministracionDeBienestarAnimal();
                     break;
@@ -223,6 +224,7 @@ namespace OrdinarioFinalRaul
         void CambiarDueño();
     }
 
+    #region "Clases de las mascotas"
     public class Perro : Mascota
     {
         private int id;
@@ -344,7 +346,7 @@ namespace OrdinarioFinalRaul
 
         public void HacerRuido()
         {
-            Console.WriteLine($"La capibara {Nombre} hace ruido. Cui Cui!")
+            Console.WriteLine($"La capibara {Nombre} hace ruido. Cui Cui!");
         }
         public void CambiarDueño()
         {
@@ -352,4 +354,5 @@ namespace OrdinarioFinalRaul
             Console.WriteLine($"La capibara {Nombre} a cambiado de dueño a (nombre de la persona).");
         }
     }
+    #endregion
 }
