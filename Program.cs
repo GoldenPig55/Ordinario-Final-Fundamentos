@@ -333,6 +333,41 @@ namespace OrdinarioFinalRaul
             }
         }
     }
+    class AdminsitracionDePersonas
+    {
+        public List<Persona> RegistroDePersonas = new List<Persona>();
+        public void MostrarPersonasRegistradas()
+        {
+            if (RegistroDePersonas.Count > 0)
+            {
+                Console.WriteLine("Peronas Registradas");
+
+                for (int i = 0; i < RegistroDePersonas.Count; i++)
+                {
+                    Console.WriteLine($"Id : {RegistroDePersonas[i].Id} Nombre : {RegistroDePersonas[i].Nombre}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hay Personas registadas.");
+            }
+        }
+
+        public void RegistrarPersonaNueva()
+        {
+            Console.WriteLine("Excelente, vemos que quiere registrar una persona.");
+            string Nombre;
+
+                    Console.WriteLine("Ingrese el nombre de la Persona.");
+                    Nombre = Console.ReadLine();
+
+                    Console.WriteLine($"Bienvenido {Nombre}, ah sido agregado al registo");
+                    Persona persona = new Persona();
+
+                    RegistroDePersonas.Add(persona);
+            }
+        }
+    }
 
     interface IMascota
     {
