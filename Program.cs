@@ -25,7 +25,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 2:Console.Clear();
-                    
+                    AdministracionDeAdopciones();
                     break;
 
                 case 3:Console.Clear();
@@ -152,6 +152,34 @@ namespace OrdinarioFinalRaul
         }
         #endregion
 
+        private static void AdministracionDeAdopciones() 
+        {
+            Console.WriteLine("Entro a Administracion De Adopciones.  Elija una Opcion");
+            Console.WriteLine("[1] - Ver mascotas disponibles para Adopcion [2] - Adoptar mascota  [3] - Regresar a Menu Anterior");
+
+            int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
+            switch (SeleccionarOpcionDeMenu)
+            {
+                case 1:
+                    Console.Clear();
+                    
+                    break;
+
+                case 2:
+                    Console.Clear();
+                    
+                    break;
+
+                case 3:
+                    Console.Clear();
+                    ProgramaPrincipal();
+                    break;
+
+                default:
+                    Console.Clear();
+                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    break;
+            }
         #endregion
     }
     interface Mascota
