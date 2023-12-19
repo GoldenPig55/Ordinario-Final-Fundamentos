@@ -32,7 +32,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 4:Console.Clear();
-
+                    ProgramaPrincipal();
                     break;
 
                 case 5:Console.Clear();// Implementado Correctamente
@@ -40,7 +40,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 default:Console.Clear();// Implementado Correctamente
-                    Console.WriteLine("La opcion que introdujo No es valida, favor de colocar otro numero");
+                    Console.WriteLine("La opcion que introdujo no es valida, favor de colocar otro numero");
                     ProgramaPrincipal();
 
                     break;
@@ -86,15 +86,19 @@ namespace OrdinarioFinalRaul
             switch (SeleccionarOpcionDeMenu) 
             {
                 case 1: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 2: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 3: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 4: Console.Clear();
+                    AdministracionDePersonas();
                     break;
 
                 case 5: Console.Clear();// Implementado Correctamente
@@ -121,22 +125,27 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 2:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 3:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 4:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 5:
                     Console.Clear();
+                    AdministracionDeMascotas();
                     break;
 
                 case 6:
@@ -163,12 +172,12 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
-
+                    AdministracionDeAdopciones();
                     break;
 
                 case 2:
                     Console.Clear();
-
+                    AdministracionDeAdopciones();
                     break;
 
                 case 3:
@@ -194,12 +203,12 @@ namespace OrdinarioFinalRaul
             {
                 case 1:
                     Console.Clear();
-
+                    AdministracionDeBienestarAnimal();
                     break;
 
                 case 2:
                     Console.Clear();
-
+                    AdministracionDeBienestarAnimal();
                     break;
 
                 case 3:
@@ -322,6 +331,7 @@ namespace OrdinarioFinalRaul
     #region "Clases de las mascotas"
     public class Perro : IMascota, IAcariciable
     {
+        private int ultimoIdPerro;
         private int id;
         private string nombre;
         private int edad;
@@ -347,6 +357,12 @@ namespace OrdinarioFinalRaul
         }
         public Temperamento Temperamento;
         public string Dueño;
+        public Perro(string nombre)
+        {
+            Nombre = nombre;
+            Id = ultimoIdPerro + 1;
+            ultimoIdPerro++;
+        }
 
         public void HacerRuido()
         {
@@ -372,6 +388,7 @@ namespace OrdinarioFinalRaul
     }
     public class Gato : IMascota, IAcariciable
     {
+        private int ultimoIdGato;
         private int id;
         private string nombre;
         private int edad;
@@ -397,6 +414,12 @@ namespace OrdinarioFinalRaul
         }
         public Temperamento Temperamento;
         public string Dueño;
+        public Gato(string nombre)
+        {
+            Nombre = nombre;
+            Id = ultimoIdGato + 1;
+            ultimoIdGato++;
+        }
 
         public void HacerRuido()
         {
@@ -423,6 +446,7 @@ namespace OrdinarioFinalRaul
     }
     public class Capibara : IMascota, IAcariciable
     {
+        private int ultimoIdCapibara;
         private int id;
         private string nombre;
         private int edad;
@@ -448,7 +472,12 @@ namespace OrdinarioFinalRaul
         }
         public Temperamento Temperamento;
         public string Dueño;
-
+        public Capibara(string nombre)
+        {
+            Nombre = nombre;
+            Id = ultimoIdCapibara + 1;
+            ultimoIdCapibara++;
+        }
         public void HacerRuido()
         {
             Console.WriteLine($"La capibara {Nombre} hace ruido. Cui Cui!");
