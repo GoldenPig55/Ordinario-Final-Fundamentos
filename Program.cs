@@ -283,7 +283,7 @@ namespace OrdinarioFinalRaul
     {
         void ResponderACaricia();
     }
-    enum Temperamento
+    public enum Temperamento
     {
         amable,
         nervioso,
