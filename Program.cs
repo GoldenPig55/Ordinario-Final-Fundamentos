@@ -88,7 +88,7 @@ namespace OrdinarioFinalRaul
         }
 
         #region "Opciones dentro de Administracion de Centro"
-        private static void AdministracionDePersonas()
+        public static void AdministracionDePersonas()
         {
             Console.WriteLine("Entro a Administración de Personas.  Favor de eleir una opcion");
             Console.WriteLine("[1] - Mostrar todas las personas registradas  [2] - Registrar Persona Nueva  [3] - Buscar personas por Nombre");
@@ -100,11 +100,13 @@ namespace OrdinarioFinalRaul
                 case 1:
                     Console.Clear();
                     administracionDePersonas.MostrarPersonasRegistradas();
+                    AdministracionDePersonas();
                     break;
 
                 case 2:
                     Console.Clear();
                     administracionDePersonas.RegistrarPersonaNueva();
+                    AdministracionDePersonas();
                     break;
 
                 case 3:
@@ -131,7 +133,7 @@ namespace OrdinarioFinalRaul
 
         }
 
-        private static void AdministracionDeMascotas()
+        public static void AdministracionDeMascotas()
         {
             Console.WriteLine("Entro a Administración de Mascotas.  Favor de eleir una opcion");
             Console.WriteLine("[1] - Mostrar Todas Las mascotas registradas  [2] - Registrar Mascota Nueva  [3] - Buscar mascotas por especie");
@@ -275,6 +277,7 @@ namespace OrdinarioFinalRaul
             else
             {
                 Console.WriteLine("No hay Perros registados");
+                Program.AdministracionDeMascotas();
             }
 
             if (RegistroDeGatos.Count > 0)
@@ -289,6 +292,7 @@ namespace OrdinarioFinalRaul
             else
             {
                 Console.WriteLine("No hay Gatos registados");
+                Program.AdministracionDeMascotas();
             }
 
             if (RegistroDeCapibaras.Count > 0)
@@ -303,6 +307,7 @@ namespace OrdinarioFinalRaul
             else
             {
                 Console.WriteLine("No hay Capibaras registados");
+                Program.AdministracionDeMascotas();
             }
 
         }
@@ -499,6 +504,7 @@ namespace OrdinarioFinalRaul
             else
             {
                 Console.WriteLine("No hay Personas registadas.");
+                Program.AdministracionDePersonas();
             }
         }
 
