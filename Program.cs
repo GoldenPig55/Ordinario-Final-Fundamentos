@@ -1,7 +1,3 @@
-
-﻿using System.Data;
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace OrdinarioFinalRaul
 {
     class Program
@@ -111,6 +107,7 @@ namespace OrdinarioFinalRaul
 
                 case 3:
                     Console.Clear();
+                    administracionDePersonas.BuscarPersonaPorNombre();
                     AdministracionDePersonas();
                     break;
 
@@ -363,13 +360,13 @@ namespace OrdinarioFinalRaul
             }
         }
 
-        public void BuscarMascotaPorEspecie() 
+        public void BuscarMascotaPorEspecie()
         {
             Console.WriteLine("Que especie es la mascota que etsa buscando ?");
             Console.WriteLine("Perro [p]  Gato [g]  Capibara [c]");
             string Especie = Console.ReadLine();
 
-            switch (Especie) 
+            switch (Especie)
             {
                 case "p":
                     if (RegistroDePerros.Count > 0)
@@ -428,7 +425,7 @@ namespace OrdinarioFinalRaul
             }
         }
 
-        public void BuscarMascotaPorNombre() 
+        public void BuscarMascotaPorNombre()
         {
             Console.WriteLine("Cual es el nombre de la mascota que esta buscando");
             int p = -1, g = -1, c = -1;
@@ -439,7 +436,7 @@ namespace OrdinarioFinalRaul
             {
                 MascotaEncontrada = (RegistroDePerros[i].Nombre) == Nombre;
 
-                if (MascotaEncontrada) 
+                if (MascotaEncontrada)
                 {
                     p = i;
                 }
@@ -467,7 +464,7 @@ namespace OrdinarioFinalRaul
             {
                 Console.WriteLine("Su mascota fue encontrada en el registro");
 
-                if (p >= 0) 
+                if (p >= 0)
                 {
                     Console.WriteLine($"Su mascota es : {RegistroDePerros[p].Id}  -  {RegistroDePerros[p].Nombre}");
                 }
@@ -480,7 +477,7 @@ namespace OrdinarioFinalRaul
                     Console.WriteLine($"Su mascota es : {RegistroDeCapibaras[c].Id}  -  {RegistroDeCapibaras[c].Nombre}");
                 }
             }
-            else 
+            else
             {
                 Console.WriteLine("Su mascota No fue encontrada en el registro");
             }
@@ -520,6 +517,33 @@ namespace OrdinarioFinalRaul
             Persona persona = new Persona(Nombre);
 
             RegistroDePersonas.Add(persona);
+        }
+        public void BuscarPersonaPorNombre()
+        {
+            Console.WriteLine("Cual es el nombre de la persona que esta buscando");
+            int p = -1;
+            string Nombre = Console.ReadLine();
+            bool PersonaEncontrada = false;
+
+            for (int i = 0; i < RegistroDePersonas.Count; i++)
+            {
+                PersonaEncontrada = (RegistroDePersonas[i].Nombre) == Nombre;
+                if (PersonaEncontrada)
+                {
+                    p = i;
+                }
+            }
+
+            if (PersonaEncontrada)
+            {
+                Console.WriteLine("Su persona fue encontrada en el registro");
+                Console.WriteLine($"Su persona es : {RegistroDePersonas[p].Id}  -  {RegistroDePersonas[p].Nombre}");
+            }
+            else
+            {
+                Console.WriteLine("Su mascota No fue encontrada en el registro");
+            }
+
         }
     }
 }
