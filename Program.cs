@@ -746,7 +746,7 @@ public class Persona
     {
         Nombre = nombre;
         Id = ultimoIdPersona + 1;
-        ultimoIdPersona++;
+        this.ultimoIdPersona = ultimoIdPersona + 1;
     }
 
     public void ObtenerMascotas()
