@@ -283,6 +283,12 @@ namespace OrdinarioFinalRaul
     {
         void ResponderACaricia();
     }
+    enum Temperamento
+    {
+        amable,
+        nervioso,
+        agresivo
+    }
 
     #region "Clases de las mascotas"
     public class Perro : IMascota, IAcariciable
