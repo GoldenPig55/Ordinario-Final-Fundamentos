@@ -20,7 +20,7 @@ namespace OrdinarioFinalRaul
             switch (SeleccionarOpcionDeMenu) 
             {
                 case 1:Console.Clear();
-
+                    AdministracionDelCentro();
                     break;
 
                 case 2:Console.Clear();
@@ -63,14 +63,22 @@ namespace OrdinarioFinalRaul
                     break;
             }
         }
+
+        private static void AdministracionDePersonas() 
+        {
+            Console.WriteLine("Entro a Administración de Personas.  Favor de eleir una opcion");
+            Console.WriteLine("[1] - Mostrar todas las personas registradas  [2] - Registrar Persona Nueva  [3] - Buscar personas por Nombre");
+            Console.WriteLine("[4] - Examinar Persona  [5] - ");
+
+        }
     }
     interface Mascota
     {
-        private int id;
+        /*private int id;
         private string nombre;
         private int edad;
         private var temperamento;
-        private string dueño;
+        private string dueño;*/
         void HacerRuido();
         void CambiarDueño();
     }
