@@ -4,7 +4,7 @@ namespace OrdinarioFinalRaul
 {
     class Program
     {
-
+        AdminsitracionDeMascotas administracionDeMascotas = new AdminsitracionDeMascotas();
         static void Main(string[] args)
         {
             ProgramaPrincipal();
@@ -217,6 +217,17 @@ namespace OrdinarioFinalRaul
         #endregion
     }
 
+    class AdminsitracionDeMascotas 
+    {
+        public List<Mascota> MascotasRegistradas = new List<Mascota>();
+        public void MostrarMascotasRegistradas() 
+        {
+            for (int i = 0; i < MascotasRegistradas.Count; i++) 
+            {
+            
+            }
+        }
+    }
 
     interface Mascota
     { 
