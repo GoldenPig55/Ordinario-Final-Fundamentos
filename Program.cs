@@ -60,6 +60,7 @@ namespace OrdinarioFinalRaul
                     break;
 
                 case 3: Console.Clear();
+                    ProgramaPrincipal();
                     break;
             }
         }
@@ -68,7 +69,27 @@ namespace OrdinarioFinalRaul
         {
             Console.WriteLine("Entro a Administración de Personas.  Favor de eleir una opcion");
             Console.WriteLine("[1] - Mostrar todas las personas registradas  [2] - Registrar Persona Nueva  [3] - Buscar personas por Nombre");
-            Console.WriteLine("[4] - Examinar Persona  [5] - ");
+            Console.WriteLine("[4] - Examinar Persona  [5] - Regresar a Menu Anterior");
+
+            int SeleccionarOpcionDeMenu = int.Parse(Console.ReadLine());
+            switch (SeleccionarOpcionDeMenu) 
+            {
+                case 1: Console.Clear();
+                    break;
+
+                case 2: Console.Clear();
+                    break;
+
+                case 3: Console.Clear();
+                    break;
+
+                case 4: Console.Clear();
+                    break;
+
+                case 5: Console.Clear();
+                    ProgramaPrincipal();
+                    break;
+            }
 
         }
     }
